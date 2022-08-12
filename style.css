@@ -11,7 +11,7 @@ body {
 /* Header*/
 .logo {
     position: relative;
-    z-index: 2;
+    z-index: -1;
     width: 367;
     height: 163;
     margin-left: 40%;
@@ -19,9 +19,9 @@ body {
 }
 .explosion {
     position: absolute;
-    z-index: 1;
-    margin-left: 10%;
-
+    z-index: -10;
+    margin-left: 14rem;
+  
 }
 
 .title {
@@ -55,7 +55,7 @@ body {
     grid-template-columns: repeat(5, 19%);
     grid-template-rows: repeat(141, 20%);
     gap: 1rem 1rem;
-    overflow: scroll;
+    overflow: auto;
     align-items: stretch;
 }
 
@@ -68,6 +68,7 @@ body {
   text-decoration: none;
   border-radius: 8px;
   color: white;
+  font-size: 1.2rem;
 }
 .btn-characters:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.532), 0 17px 50px 0 rgba(0, 0, 0, 0.301);
@@ -132,7 +133,7 @@ body {
     border: 0.5rem solid black;
     display: grid;
     gap: 1rem 1rem;
-    overflow: scroll;
+    overflow: auto;
     align-items: stretch;
 
 }
@@ -154,6 +155,7 @@ body {
     text-decoration: none;
     border-radius: 8px;
     color: white;
+    font-size: 1.2rem;
 }
 .btn-spell-name:hover, .btn-book-name:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.532), 0 17px 50px 0 rgba(0, 0, 0, 0.301);
@@ -230,7 +232,7 @@ body {
     gap: 1rem 1rem;
     grid-template-columns: repeat(5, 19%);
     grid-template-rows: repeat(30, 20%);
-    overflow: scroll;
+    overflow: auto;
     align-items: stretch;
 }
 
@@ -243,6 +245,7 @@ body {
     text-decoration: none;
     border-radius: 8px;
     color: white;
+    font-size: 1.2rem;
   }
   .btn-potions:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.532), 0 17px 50px 0 rgba(0, 0, 0, 0.301);
@@ -310,8 +313,8 @@ body {
 #books {
     background-image: url(./Images/Background/hufflepuff-background-2200.jpg);
     grid-template-columns: repeat(5, 19%);
-    grid-template-rows: repeat(2, 20%);
-    height: 30rem;
+    grid-template-rows: repeat(2, 5.5rem);
+    height: 18rem;
 }
 
 .book-content {
@@ -334,4 +337,61 @@ footer {
 .credit,
 .owners {
     margin-top: 4rem;
+}
+
+/*dropdown menu*/
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 0px 48px 24px 0px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    width: 300px
+}
+
+
+.dropdown {
+    position: relative;
+    display: in-block;
+    float: right;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgb(8 31 28);
+    min-width: 250px;
+    box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+    border: solid white;
+    padding-left: 1rem;
+    margin-right: 2.5rem;
+}
+
+.dropdown-content li {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+}
+
+.dropdown-content li:hover {
+    background-color: rgba(255, 255, 255, 0.365);
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+ul {
+  display:flex;
+  justify-content:flex-start;
+  flex-direction: column;
+  color: white;
+  font-size: 24px;
 }
