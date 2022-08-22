@@ -12,16 +12,11 @@ body {
 .logo {
     position: relative;
     z-index: -1;
-    width: 367;
-    height: 163;
+    width: 30%;
+    max-width: 367px;
+   /*  height: 163; */
     margin-left: 40%;
-    margin-top: 0px; 
-}
-.explosion {
-    position: absolute;
-    z-index: -10;
-    margin-left: 14rem;
-  
+    margin-top: 3rem; 
 }
 
 .title {
@@ -43,24 +38,36 @@ body {
     padding: 1%;
 }
 
-#characters {
+/*Sections*/
+#characters, #spells, #potions, #books {
     margin-left: 2rem;
     padding: 1%;
-    background-image: url(./Images/Background/slytherin-green-star.jpg);
     color: white;
     height: 30rem;
     width: 95%;
     border: 0.5rem solid black;
     display: grid;
     grid-template-columns: repeat(5, 19%);
-    grid-template-rows: repeat(141, 20%);
     gap: 1rem 1rem;
     overflow: auto;
     align-items: stretch;
 }
+#characters{
+  background-image: url(./Images/Background/slytherin-green-star.jpg);
+}
+#spells{
+  background-image: url(./Images/Background/ravenclaw-background-2200.jpg);
+}
+#potions{
+  background-image: url(./Images/Background/gryffindor-sky.jpg);
+} 
+#books{
+  background-image: url(./Images/Background/hufflepuff-background-2200.jpg);
+  height: 18rem;
+}
 
-/* Name of the characters as a button*/
-.btn-characters {
+/* Name of the characters,spells, books and potions as a button*/
+.btn-characters, .btn-spell-name, .btn-book-name, .btn-potions {
   width: 100%;
   height: 5.5rem;
   background: #ffffff40;
@@ -70,28 +77,49 @@ body {
   color: white;
   font-size: 1.2rem;
 }
-.btn-characters:hover {
+
+.btn-characters:hover, .btn-spell-name:hover, .btn-book-name:hover,   .btn-potions:hover   {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.532), 0 17px 50px 0 rgba(0, 0, 0, 0.301);
   transition-duration: 0.4ms;
 }
 
+/*scrollbar style*/
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(146, 133, 156, 0.148); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.916); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(134, 129, 129); 
+}
+
 /* The Modal (background) */
-.characters-container {
-  display: none;
-  position: fixed;
-  z-index: 3;
-  padding-top: 100px;
+.characters-container, .spell-modal, .book-modal, .potions-container{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
+
 /* Modal Content*/
-.characters-content {
+.characters-content, .spell-content, .book-content, .potions-content {
   position: relative;
-  background-image: url(./Images/Background/slytherin-green-star.jpg);
   margin: auto;
   padding: 0;
   border: none;
@@ -99,257 +127,67 @@ body {
   width: 80%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
+
+.characters-content{
+background-image: url(./Images/Background/slytherin-green-star.jpg);
+}
+
+.spell-content{
+  background-image: url(./Images/Background/ravenclaw-background-2200.jpg);
+  }
+  .book-content{
+    background-image: url(./Images/Background/hufflepuff-background-2200.jpg);
+  }
+  .potions-content{
+    background-image: url(./Images/Background/gryffindor-sky.jpg);
+  }
+
  /*The Close Button*/
-.characters-close{
+.characters-close, .spell-close, .book-close, .potions-close {
   color: white;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
+
 .characters-close:hover,
-.characters-close:focus {
+.characters-close:focus,.spell-close:hover,
+.spell-close:focus,
+.book-close:hover,
+.book-close:focus,.potions-close:hover,
+.potions-close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
+
 /*modal header*/
-.characters-name {
+.characters-name, .spell-name, .book-name, .potions-name  {
   padding: 2px 16px;
   background-color: #ffffff40;
   color: white;
   height: 2rem;
   border-radius: 8px 8px 0px 0px;
 }
-.characters-description {
+
+.characters-description, .spell-type, 
+.spell-description, 
+.book-release-day, 
+.book-description, .potions-description  {
   padding: 2px 16px;
   color: white; 
-}
-
-#spells, #books {
-    margin-left: 2rem;
-    padding: 1%;
-    color:white;
-    width: 95%;
-    border: 0.5rem solid black;
-    display: grid;
-    gap: 1rem 1rem;
-    overflow: auto;
-    align-items: stretch;
-
-}
-
-/*spells style*/
-#spells {
-    background-image: url(./Images/Background/ravenclaw-background-2200.jpg);
-    grid-template-columns: repeat(5, 19%);
-    grid-template-rows: repeat(61, 20%);
-    height: 30rem;
-}
-
-/* Name od the Spell as a button*/
-.btn-spell-name, .btn-book-name {
-    width: 100%;
-    height: 5.5rem;
-    background: #ffffff40;
-    border: none;
-    text-decoration: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 1.2rem;
-}
-.btn-spell-name:hover, .btn-book-name:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.532), 0 17px 50px 0 rgba(0, 0, 0, 0.301);
-    transition-duration: 0.4ms;
-}
-
-/* The Modal (background) */
-.spell-modal, .book-modal {
-    display: none;
-    position: fixed;
-    z-index: 3;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-  }
-  /* Modal Content*/
-  .spell-content, .book-content {
-    position: relative;
-    margin: auto;
-    padding: 0;
-    border: none;
-    border-radius: 8px;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  }
-  .spell-content {
-    background-image: url(./Images/Background/ravenclaw-background-2200.jpg);
-  }
-   /*The Close Button*/
-  .spell-close, .book-close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  .spell-close:hover,
-  .spell-close:focus,
-  .book-close:hover,
-  .book-close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  /*modal header*/
-  .spell-name, .book-name {
-    padding: 2px 16px;
-    background-color: #ffffff40;
-    color: white;
-    height: 2rem;
-    border-radius: 8px 8px 0px 0px;
-  }
-  .spell-type, 
-  .spell-description, 
-  .book-release-day, 
-  .book-description{
-    padding: 2px 16px;
-    color: white; 
-}
-
-
-#potions {
-    margin-left: 2rem;
-    padding: 1%;
-    background-image: url(./Images/Background/gryffindor-sky.jpg);
-    color: white;
-    height: 30rem;
-    width: 95%;
-    border: 0.5rem solid black;
-    display: grid;
-    gap: 1rem 1rem;
-    grid-template-columns: repeat(5, 19%);
-    grid-template-rows: repeat(30, 20%);
-    overflow: auto;
-    align-items: stretch;
-}
-
-  /* Name of the potion as a button*/
-  .btn-potions {
-    width: 100%;
-    height: 5.5rem;
-    background: #ffffff40;
-    border: none;
-    text-decoration: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 1.2rem;
-  }
-  .btn-potions:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.532), 0 17px 50px 0 rgba(0, 0, 0, 0.301);
-    transition-duration: 0.4ms;
-  }
-
-/* The Modal (background) */
-.potions-container {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 3; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .potions-content {
-    position: relative;
-    background-image: url(./Images/Background/gryffindor-sky.jpg);
-    margin: auto;
-    padding: 0;
-    border: none;
-    border-radius: 8px;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  }
-  
-  /* The Close Button */
-  .potions-close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-
-  }
-  
-  .potions-close:hover,
-  .potions-close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-
-  /*modal header*/
-  .potions-name {
-    padding: 2px 16px;
-    background-color: #ffffff40;
-    color: white;
-    height: 2rem;
-    border-radius: 8px 8px 0px 0px;
-  }
-  
-  .potions-description {
-    padding: 2px 16px;
-    color:white;
-}
-  
-
-#books {
-    background-image: url(./Images/Background/hufflepuff-background-2200.jpg);
-    grid-template-columns: repeat(5, 19%);
-    grid-template-rows: repeat(2, 5.5rem);
-    height: 18rem;
-}
-
-.book-content {
-    background-image: url(./Images/Background/hufflepuff-background-2200.jpg);
-}
-
-footer {
-    background-image: url(./Images/Background/footer.jpg);
-    color: white;
-    height: 6rem;
-}
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-.credit,
-.owners {
-    margin-top: 4rem;
 }
 
 /*dropdown menu*/
 .dropbtn {
     background-color: transparent;
     color: white;
-    padding: 0px 48px 24px 0px;
+    padding: 0px 48px 0px 0px;
     font-size: 24px;
     border: none;
     cursor: pointer;
     width: 300px
 }
-
 
 .dropdown {
     position: relative;
@@ -379,7 +217,7 @@ footer {
     font-size: 18px;
 }
 
-.dropdown-content li:hover {
+.dropdown-content li:hover, .clean-filter:hover {
     background-color: rgba(255, 255, 255, 0.365);
     border-radius: 8px;
 }
@@ -388,10 +226,80 @@ footer {
     display: block;
 }
 
-ul {
+ul, .clean-filter {
   display:flex;
   justify-content:flex-start;
   flex-direction: column;
   color: white;
   font-size: 24px;
+}
+
+/*Footer*/
+footer {
+  background-image: url(./Images/Background/footer.jpg);
+  color: white;
+  height: 6rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.credit,
+.owners {
+  margin-top: 4rem;
+}
+
+.calculation {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+  margin-right: 2rem;
+  font-size: 20px;
+  padding: 0 0.5rem 0 0;
+}
+.sort-by {
+color:white;
+font-size: 18px;
+margin: 0 2rem 0 2.5rem;
+}
+.sort-button,  .sort-button-reverse{
+color: white;
+font-size: 18px;
+background: none;
+border: none;
+}
+.sort-button:hover, .sort-button-reverse:hover {
+  color: goldenrod;
+}
+/*Search Bar and button styles*/
+.search{
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+input.search-bar{
+  border:rgba(0, 0, 0, 0.747);
+  border-radius: 6px;
+  background-color: #ffffff68;
+  width: 50rem;
+  color:white
+  
+}
+input::placeholder {
+  color: white;
+
+}
+.owl-btn, .owl{
+border: none;
+background-color: #fefefe2b;
+border-radius: 8px;
+width: 2rem;
+height: 2rem;
+}
+.owl-btn:hover{
+  box-shadow: 0 12px 16px 0 rgb(225, 155, 46), 0 17px 50px 0 rgb(225, 155, 46);
 }

@@ -9,14 +9,20 @@
 
 <body>
   <header class="title-image">
-    <img class="explosion" src="./Images/Background/explosion.png" alt="Background to logo">
     <img class="logo" src="./Images/logo.png" alt="logo">
     <h1 class="title"> Harry Potter: characters and more...</h1><br>
   </header>
 
   <main class="main">
     <section class="characters">
-      <h3 class="header-character">Characters' info</h3><br>
+      <h3 class="header-character">Characters' info</h3>
+      <form role="search" id="search-characters-form">
+        <div class="search">
+          <input type="search" id="search-characters" class="search-bar" name="q"
+          placeholder="Search…" size="30">
+          <button id="search-character-btn" class="owl-btn"> <img class="owl" src="./Images/owl.png" alt="owl"></button>
+        </div>
+      </form>
       <div class="dropdown">
         <button class="dropbtn">
           Filter by:
@@ -28,6 +34,7 @@
         </button>
         <div class="dropdown-content">
           <ul class="houses-dropdown">
+            <p class="clean-filter" id="clean-filter">None</p>
             Characters by houses
             <li id="Gryffindor">
               <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,22 +90,53 @@
           </ul>
         </div>
       </div>
-      <div id="characters">
+      <br><br>
+      <p id="calculation" class="calculation"></p>
+      <div class="sort-by">
+      <button class="sort-button" id="sort-button-characters" >A-Z</button>
+      /
+      <button class="sort-button-reverse" id="reverse-button-characters">Z-A</button>
+      </div>
+      <div id="characters" class="grid-space">
       </div>
     </section><br>
     <section class="spells">
       <h3 class="header-spells">Spells' info</h3><br>
-      <div id="spells">
+      <form role="search" id="search-spells-form">
+        <div class="search">
+          <input type="search" id="search-spells" class="search-bar" name="q"
+          placeholder="Search…" size="30">
+          <button id="search-spells-btn" class="owl-btn"> <img class="owl" src="./Images/owl.png" alt="owl"></button>
+        </div>
+      </form>
+      <div class="sort-by">
+        <button class="sort-button" id="sort-button-spells">A-Z</button>
+        /
+        <button class="sort-button-reverse" id="reverse-button-spells">Z-A</button>
+        </div>
+      <div id="spells"  class="grid-space">
       </div>
     </section><br>
     <section class="potions">
       <h3 class="header-potions">Potions' info</h3><br>
-      <div id="potions">
+      <form role="search" id="search-potions-form">
+        <div class="search">
+          <input type="search" id="search-potions" class="search-bar" name="q"
+          placeholder="Search…" size="30">
+          <button id="search-potions-btn" class="owl-btn"> <img class="owl" src="./Images/owl.png" alt="owl"></button>
+        </div>
+      </form>
+      <div class="sort-by">
+        <button class="sort-button" id="sort-button-potions">A-Z</button>
+        /
+        <button class="sort-button-reverse" id="reverse-button-potions">Z-A</button>
+        </div>
+      <div id="potions" class="grid-space">
       </div>
     </section><br>
     <section class="books">
-      <h3 class="header-books">Books' info
-      </h3> <br>
+      <h3 class="header-books">Books' info</h3><br>
+      <br>
       <div id="books">
       </div>
     </section>

@@ -1,5 +1,5 @@
 
-import { charactersFilterHouses, filterHuman, filterNotHuman} from './data.js';
+import { charactersFilterHouses, filterHuman, filterNotHuman,sortZA, sortAZ, calculus, totalStudents, searchName} from './data.js';
 import data from './data/harrypotter/harryPotter.js';
 
 function showPotions(item) {
@@ -161,7 +161,6 @@ data.books.map((item) => {
 
   printCharacter()
 
-
 // user story 2 houses
 
 function filterCharacters(e) {
@@ -173,8 +172,19 @@ function filterCharacters(e) {
 } 
 
 document.querySelectorAll("li").forEach((li)=>{
-  li.addEventListener("click", (e) => { filterCharacters(e) });
+  li.addEventListener("click", (e) => { 
+    filterCharacters(e) 
+    document.getElementById("calculation").innerHTML ="Out of " + totalStudents(data.characters) +" students, " + calculus(data.characters, e.target.id) + "% are in " + e.target.id + " house.";
+    //user story 5: filter/sort
+    document.getElementById("reverse-button-characters").addEventListener("click", () =>{
+      sortZA(filterCharacters(e))
+     }); 
+     document.getElementById("sort-button-characters").addEventListener("click", () =>{
+      sortAZ(filterCharacters(e))
+    });
+  });
 })
+
 
 //Historia 2 species
 
@@ -185,7 +195,17 @@ document.querySelectorAll("li").forEach((li)=>{
   filterHuman(data.characters, e.target.id).forEach ((item) => document.getElementById("characters").appendChild(showCharacters(item)))
 }
 //Ingresa el evento de escuchar el click y arrojar la función filter en showHuman
-document.getElementById("Human").addEventListener("click", (e) => {showHuman(e)})
+document.getElementById("Human").addEventListener("click", (e) => {
+  showHuman(e)
+  document.getElementById("calculation").innerHTML = "There are " + filterHuman(data.characters, e.target.id).length + " humans."
+   //user story 5: filter/sort
+   document.getElementById("reverse-button-characters").addEventListener("click", () =>{
+    sortZA(showHuman(e))
+   }); 
+   document.getElementById("sort-button-characters").addEventListener("click", () =>{
+    sortAZ(showHuman(e))
+  });
+})
 
 function showNotHuman(e){
   //Vaciando el grid de characters en el DOM
@@ -193,6 +213,117 @@ function showNotHuman(e){
   //Recorre la función el array resultante de la función filterHuman e inserta cada character en el grid vaciado anteriormente.
   filterNotHuman(data.characters, e.target.className).forEach ((item) => document.getElementById("characters").appendChild(showCharacters(item)))
 }
-document.querySelector(".Human").addEventListener("click", (e) => {showNotHuman(e)})
+document.querySelector(".Human").addEventListener("click", (e) => {
+  showNotHuman(e)
+  document.getElementById("calculation").innerHTML = "There are " + filterNotHuman(data.characters, e.target.className).length + " not humans."
+   //user story 5: filter/sort
+   document.getElementById("reverse-button-characters").addEventListener("click", () =>{
+    sortZA(showNotHuman(e))
+   }); 
+   document.getElementById("sort-button-characters").addEventListener("click", () =>{
+    sortAZ(showNotHuman(e))
+  });
+})
+
+document.getElementById("clean-filter").addEventListener("click", () => {
+  document.getElementById("characters").innerHTML = ""
+  document.getElementById("calculation").innerHTML = ""
+  printCharacter()
+});
+
+//Sort from A to Z and Z to A for characters
+
+document.getElementById("sort-button-characters").addEventListener("click", () =>{
+  document.getElementById("characters").innerHTML = ""
+  document.getElementById("calculation").innerHTML = ""
+  sortAZ(data.characters).forEach((item) =>{
+    document.getElementById("characters").appendChild(showCharacters(item))
+  })});
+
+document.getElementById("reverse-button-characters").addEventListener("click", () =>{
+  document.getElementById("characters").innerHTML = ""
+  document.getElementById("calculation").innerHTML = ""
+   sortZA(data.characters).forEach((item) =>{
+      document.getElementById("characters").appendChild(showCharacters(item))
+    })});
+  
+//Sort from A to Z and Z to A for spells
+document.getElementById("sort-button-spells").addEventListener("click", () =>{
+  document.getElementById("spells").innerHTML = "";
+  sortAZ(data.spells).forEach((item) =>{
+    document.getElementById("spells").appendChild(showSpell(item))
+  });
+})
+
+  document.getElementById("reverse-button-spells").addEventListener("click", () => {
+    document.getElementById("spells").innerHTML = "";
+    sortZA(data.spells).forEach((item) =>{
+    document.getElementById("spells").appendChild(showSpell(item))
+  });
+})
 
 
+document.getElementById("sort-button-potions").addEventListener("click", () =>{
+  document.getElementById("potions").innerHTML = "";
+  sortAZ(data.potions).forEach((item) =>{
+    document.getElementById("potions").appendChild(showPotions(item))
+  });
+})
+
+  document.getElementById("reverse-button-potions").addEventListener("click", () => {
+    document.getElementById("potions").innerHTML = "";
+    sortZA(data.potions).forEach((item) =>{
+    document.getElementById("potions").appendChild(showPotions(item))
+  });
+})
+
+//search bar for  potions section
+
+let searchPotions = document.getElementById("search-potions")
+let potionsForm = document.getElementById("search-potions-form")
+
+function searchPotionsResult() {
+  document.getElementById("potions").innerHTML = "";
+  searchName(data.potions,searchPotions.value).forEach((item) => {
+  document.getElementById("potions").appendChild(showPotions(item))
+  });
+}
+potionsForm.addEventListener("submit", (e) =>{
+  e.preventDefault();
+  searchPotionsResult();
+})
+
+/*
+potionsForm.addEventListener("keyup", (e) =>{
+  e.preventDefault();
+  searchPotionsResult();
+})*/
+// search bar of characters section
+
+let searchCharacters = document.getElementById("search-characters")
+let charactersForm = document.getElementById("search-characters-form")
+
+function searchCharactersResult() {
+  document.getElementById("characters").innerHTML = "";
+  searchName(data.characters,searchCharacters.value).forEach((item) => {
+  document.getElementById("characters").appendChild(showCharacters(item))
+  });
+}
+charactersForm.addEventListener("submit", (e) =>{
+  e.preventDefault();
+  searchCharactersResult();
+})
+// search bar of spells section
+let searchSpells = document.getElementById("search-spells")
+let spellsForm = document.getElementById("search-spells-form")
+
+function searchSpellsResult() {
+  document.getElementById("spells").innerHTML = "";
+  searchName(data.spells,searchSpells.value).forEach((item) => {
+  document.getElementById("spells").appendChild(showSpell(item))
+  });
+}
+spellsForm.addEventListener("submit", (e) =>{
+  e.preventDefault();
+  searchSpellsResult();
+})
