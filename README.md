@@ -6,7 +6,7 @@ Comenzamos hablando sobre cómo podríamos implementar la página según los req
 
 A continuación se muestra el prototipo de baja fidelidad diseñado:
 
-![prototipo_baja] (/ImagesReadme/IMG_2878.jpg)
+ ![prototipo_baja] (/ImagesReadme/IMG_2878.jpg)
 
 Posterior a eso, se hizo uso de Figma para maquetar el prototipo de alta fidelidad resultando en las siguientes imágenes:
 (insertar imagenes)
@@ -14,13 +14,15 @@ Posterior a eso, se hizo uso de Figma para maquetar el prototipo de alta fidelid
 Finalmente, dividimos el proyecto en HU las cuales se fueron definiendo a medida que fuimos avanzando:
 (insertar imágenes)
 
-##¿Quiénes son lxs usuarixs? ¿Cuál es su relación con el producto?
+## ¿Quiénes son lxs usuarixs? ¿Cuál es su relación con el producto?
 
 Lxs usuarixs son todxs aquellxs que se consideran fanáticxs de Harry Potter y que quisieran consultar por motivos personales información sobre personajes, hechizos, pociones y libros.
 
-##¿Cómo el producto soluciona las necesidades de lxs usuarixs?
+## ¿Cómo el producto soluciona las necesidades de lxs usuarixs?
 
 Lxs usuarixs pueden consultar la información sobre personajes, hechizos, pociones y libros con ayuda de un buscador de palabras, un filtro o un ordenado de la información disponible y visualizarla según sus intereses particulares.
+
+URL: https://laladiaz.github.io/CDMX013-data-lovers/
 
 
 ## Índice
