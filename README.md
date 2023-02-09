@@ -3,7 +3,7 @@ Not resposive
 
 ## The website
 
-[Harry Potter Fan Club] (https://laladiaz.github.io/CDMX013-data-lovers/)
+[Harry Potter Fan Club](https://laladiaz.github.io/CDMX013-data-lovers/)
 
 This  website was inspired mainly by "The wizarding World" which is the official JK Rowling website, and is intended
 as a non commercial exercise.
