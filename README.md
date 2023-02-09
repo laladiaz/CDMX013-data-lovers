@@ -8,7 +8,7 @@ Not resposive
 This  website was inspired mainly by "The wizarding World" which is the official JK Rowling website, and is intended
 as a non commercial exercise.
 
-In here, you can see characters, postions, spells and books displayed in a grid. In each section, you can search by name in the search bar, filter in the drop-down menu and order the characters, potions and spells as desire. The fun facts at the begining of the website change ramdoly with each page refresh executed.
+In here, you can see characters, potions, spells and books displayed in a grid. In each section, you can search by name in the search bar, filter in the drop-down menu and order the characters, potions and spells as desire. The fun facts at the begining of the website change ramdoly with each page refresh executed.
 
 ## Designingthe website
 
