@@ -321,7 +321,8 @@ footer {
 .search {
   display: flex;
   justify-content: center;
-  gap: 4px;
+  gap: 1rem;
+  margin:2rem 0 2rem 0;
 }
 
 input.search-bar {
@@ -334,16 +335,18 @@ input.search-bar {
 
 input::placeholder {
   color: white;
+  text-align: center;
 
 }
 
 .owl-btn,
 .owl {
   border: none;
-  background-color: #fefefe2b;
+  background-color: #fefefe00;
   border-radius: 8px;
   width: 2rem;
   height: 2rem;
+ 
 }
 
 .owl-btn:hover {
