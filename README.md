@@ -1,28 +1,30 @@
-# Data Lovers
-## Incluye información sobre proceso y decisiones de diseño.
+# Harry Potter Fan Club Website
+Not resposive
 
-Nuestra página está inspirada principalmente en "The wizarding world" que es la página oficial de J.K. Rowling.
-Comenzamos hablando sobre cómo podríamos implementar la página según los requerimientos del proyecto con la finalidad de crear el prototipo de alta fidelidad en caso de tener todo el tiempo del mundo.
+## The website
 
-A continuación se muestra el prototipo de baja fidelidad diseñado:
+[Harry Potter Fan Club] (https://laladiaz.github.io/CDMX013-data-lovers/)
 
- ![prototipo_baja] (src/Images/ImagesReadme/IMG_2878.jpg)
+This  website was inspired mainly by "The wizarding World" which is the official JK Rowling website, and is intended
+as a non commercial exercise.
 
-Posterior a eso, se hizo uso de Figma para maquetar el prototipo de alta fidelidad resultando en las siguientes imágenes:
-(insertar imagenes)
+In here, you can see characters, postions, spells and books displayed in a grid. In each section, you can search by name in the search bar, filter in the drop-down menu and order the characters, potions and spells as desire. 
 
-Finalmente, dividimos el proyecto en HU las cuales se fueron definiendo a medida que fuimos avanzando:
-(insertar imágenes)
+## Designingthe website
 
-## ¿Quiénes son lxs usuarixs? ¿Cuál es su relación con el producto?
+From the guidelines given, we started drawing a low-fidelity prototype to know which components would be necessary to develop.
 
-Lxs usuarixs son todxs aquellxs que se consideran fanáticxs de Harry Potter y que quisieran consultar por motivos personales información sobre personajes, hechizos, pociones y libros.
+![prototipo_baja](src/Images/ImagesReadme/IMG_2878.jpg)
 
-## ¿Cómo el producto soluciona las necesidades de lxs usuarixs?
+After, we looked at the Wizarding world website and got inspire to make our high-fidelity prototype in Figma:
 
-Lxs usuarixs pueden consultar la información sobre personajes, hechizos, pociones y libros con ayuda de un buscador de palabras, un filtro o un ordenado de la información disponible y visualizarla según sus intereses particulares.
+[Figma Prototype](https://www.figma.com/file/BqE6YuBH1R2tou71qC7Ym4/Harry-Potter?node-id=0%3A1&t=6l0dfwDg6t3jv3YO-1)
+
+The difference in the size of bottoms was meant to evoke the daily prophet, where pictures, titles and writings feel missmatch and fun.
 
 URL: https://laladiaz.github.io/CDMX013-data-lovers/
+
+Guidelines give:
 
 
 ## Índice
