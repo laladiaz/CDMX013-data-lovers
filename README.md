@@ -14,9 +14,9 @@ In here, you can see characters, potions, spells and books displayed in a grid. 
 
 From the guidelines given, we started drawing a low-fidelity prototype to know which components would be necessary to develop.
 
-<image src="src/Images/ImagesReadme/IMG_2878.jpg" width=50% height=50%>
+                            <image src="src/Images/ImagesReadme/IMG_2878.jpg" width=50% height=50%>
 
-![prototipo_baja](src/Images/ImagesReadme/IMG_2878.jpg)
+
 
 After, we looked at the Wizarding world website and got inspire to make our high-fidelity prototype in Figma:
 
