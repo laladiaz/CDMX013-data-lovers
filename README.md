@@ -1,5 +1,5 @@
 # Harry Potter Fan Club Website
-Not resposive
+Not resposive: desktop
 
 ## The website
 
